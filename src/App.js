@@ -24,6 +24,7 @@ import { IntlProvider, FormattedMessage } from 'react-intl'
 // import zh from 'react-intl/locale-data/zh'
 import './styles/style.scss'
 import HiddenTestPaper from './game/components/HiddenTestPaper'
+import { Box } from '@material-ui/core'
 // addLocaleData([...en,...zh])
 
 library.add(faStar, faEdit, faArrowRight, faPlusCircle)
@@ -91,8 +92,12 @@ export const TabMenu = ({testModeState, testModeFn, answerModeState, answerModeF
     <ChangeModeBTN id={'star'} clickFn={testModeFn} stateOfMode={testModeState} btnText={'從收藏出題'}  />
     <span>   </span>
     <input type='number' value={ testAmount } onChange={changeAmountFn} />
-    <ChangeModeBTN id={'answer-single'} clickFn={answerModeFn} stateOfMode={answerModeState} btnText={'單題模式'} filterText={'answer-'} />
-    <ChangeModeBTN id={'answer-all'} clickFn={answerModeFn} stateOfMode={answerModeState} btnText={'試卷模式'} filterText={'answer-'} />
+    <Box
+      paddingY={2}
+    >
+      <ChangeModeBTN id={'answer-single'} clickFn={answerModeFn} stateOfMode={answerModeState} btnText={'單題模式'} filterText={'answer-'} />
+      <ChangeModeBTN id={'answer-all'} clickFn={answerModeFn} stateOfMode={answerModeState} btnText={'試卷模式'} filterText={'answer-'} />
+    </Box>
   </div>
 )
 
